@@ -14,7 +14,7 @@
 
 # Git 客户端
 
-Mac 和 Linux 系统推荐使用终端即可，Git 一开始的命令的确很多，别无它法，熟能生巧，多练习即可能够掌握日常使用的一些名利，再配合[`常用命令的alias`](https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases)或者强大的 [`zsh 终端`](http://www.ixirong.com/2015/04/27/strong-bash-use-oh-my-zsh/)都能显著的提升效率，当然如果非得寻找图形化客户端，也不是没有；Windows下还是尽快熟悉客户端的使用吧，因为win下面的bash太难用了：
+Mac 和 Linux 系统推荐使用终端即可，Git 一开始的命令的确很多，别无它法，熟能生巧，多练习即可能够掌握日常使用的一些命令，再配合[`常用命令的alias`](https://git-scm.com/book/tr/v2/Git-Basics-Git-Aliases)或者强大的 [`zsh 终端`](http://www.ixirong.com/2015/04/27/strong-bash-use-oh-my-zsh/)都能显著的提升效率，当然如果非得寻找图形化客户端，也不是没有；Windows下还是尽快熟悉客户端的使用吧，因为win下面的bash太难用了：
 
 - [GUI Clients](https://git-scm.com/downloads/guis) 官方推荐图形客户端，罗列的包括了Mac、Windows、Linux下的客户端，免费及付费的都有，你可以在这里面挑选一个就ok。
 - [Git for windows](https://msysgit.github.io/) 针对 Window 系统发布的客户端，集成了 Shell 窗口，方便在 Win 下面使用命令操作。
@@ -48,7 +48,7 @@ Mac 和 Linux 系统推荐使用终端即可，Git 一开始的命令的确很�
 - 一个很有意思的学习 Git 的小游戏 http://pcottle.github.io/learnGitBranching/
 - [Git completion](https://github.com/git/git/tree/master/contrib/completion) 终端 Git 命令的 Tab 键补全功能，比如打开终端，输入`git che`，按 Tab 键，则会出现`check-attr\check-ignore\checkout`等等的选项，支持 Bash、Zsh 等 Shell，使用方法(以 Bash Shell 为例)：下载链接中相应的版本到用户目录下，修改`~/.bashrc`文件 ，加入`source ~/git-completion.bash` ，使得每次打开终端时都执行一次`git-completion.bash`脚本，来完成git 命令的 Tab 补全。或者采用这种方法[Quick Tip: Autocomplete Git Commands and Branch Names in Bash](http://code-worrier.com/blog/autocomplete-git/)
 - [.gitignore template](https://github.com/github/gitignore) 各种语言、各种编辑器的`.gitignore`文件模板，当你进行某些语言的开发时候，直接使用相应的模板即可，省去自己写的时间（还不全），当然你也可以去贡献自己的模板，不知道`.gitignore`？ 简单讲就是不让git跟踪某些文件，详情阅读：http://git-scm.com/docs/gitignore
- **PS：** 推荐使用 `.gitignore_global` 文件进行全局过滤，比如mac下的 `.DS_Store` 文件，省去在每个 Repo 下进行设置 `.gitignore`文件了。全局模板参考：https://github.com/github/gitignore/tree/master/Global
+   **PS：** 推荐使用 `.gitignore_global` 文件进行全局过滤，比如mac下的 `.DS_Store` 文件，省去在每个 Repo 下进行设置 `.gitignore`文件了。全局模板参考：https://github.com/github/gitignore/tree/master/Global
 
 # Git extensions
 - Git 的大文件支持[Git LFS](https://github.com/github/git-lfs) ： Git在对大文件进行版本管理的时候，速度上是很慢的，一个帮助处理大文件的扩展插件，在 GithubHelp [Working with large files](https://help.github.com/articles/working-with-large-files/) 中提到，不建议对大文件如日志、database等使用Git进行版本控制，如果非要有这种需求，则建议使用 Git LFS 。
@@ -57,11 +57,12 @@ Mac 和 Linux 系统推荐使用终端即可，Git 一开始的命令的确很�
 # 实践备忘
 - 常用命令手册 [Git 日常开发常用命令整理](useful-git-command.md)，日常开发中的利器，可以当做备忘录来使用，推荐👍。
 - 总是使用 `git merge --no-ff` 而不是 `git merge` ，记录下分支的变更历史。 详情 http://stackoverflow.com/questions/9069061/what-is-the-difference-between-git-merge-and-git-merge-no-ff
-- 恰当的使用 `git pull --rebase` 避免不必要的merge记录。 详情 http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase
+- 恰当的使用 `git pull --rebase` 避免不必要的merge记录。 详情 http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase  「You should use `git pull --rebase` when your changes do not deserve a separate branch」
+
 - [Git-flight-rules](https://github.com/k88hudson/git-flight-rules) 一些日常使用中的场景，比如提交错了分支、提交时的用户名邮箱不对、丢弃某些提交、未提交的代码直接提交到另外一个分支等等，很实用。
 - [How to undo (almost) anything with Git](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) 撤销一切，汇总各种回滚撤销的场景，加强学习。
 - [怎样在一台电脑上同时使用公司 GitLab 和 Github 的服务？](use-gitlab-github-together.md) 由于公司团队使用 GitLab 来托管代码，同时，个人在 Github 上还有一些代码仓库，可公司邮箱与个人邮箱是不同的，由此产生的 SSH key 也是不同的，这就造成了冲突 ，文章提供此类问题的解决方案。
 - [如何书写提交信息](http://chris.beams.io/posts/git-commit/) 当项目越来越大，提交信息越来越复杂的时候，如何书写好提交信息就变得至关重要，这篇文章的作者总结出7条准则。
-- [Commit message 和 change log编写规范-阮一峰](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html) 良好的 commit log 好处大大的多。
+- [Commit message 和 change log编写规范-阮一峰](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html) 良好的 commit log 好处大大的多。 [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.uyo6cb12dt6w) 
 - [git-recipes](https://github.com/geeeeeeeeek/git-recipes/wiki) @童仲毅 整理翻译的一些优秀文章。
 - [githug](https://github.com/Gazler/githug) Git your game on. 使用通关游戏的形式来练习git的一些命令，非常有趣。
